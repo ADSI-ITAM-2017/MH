@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MH</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<form> 
+<div class = "container" align = center style = "padding: 128px 420px"> 
+
+<div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputName">Nombre:</label> 
+</p>
+    <input type="nombre" class="form-control" id="exampleInputName" placeholder="Nombre">
+  </div>
+
+<div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputApellidos">Apellidos:</label> 
+</p>
+    <input type="apellidos" class="form-control" id="exampleInputApellidos" placeholder="Apellidos">
+  </div>
+
+
+<div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputEmail1">Correo electrónico:</label> 
+</p>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico">
+  </div>
+
+<div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputApellidos">Teléfono:</label> 
+</p>
+    <input type="Teléfono" class="form-control" id="exampleInputTeléfono" placeholder="Teléfono">
+  </div>
+
+  <div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputPassword1">Contraseña:</label>
+</p>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+  </div>
+<div class="form-group">
+<p style = "font-size: 20px" >
+    <label for="exampleInputPassword2">Confirmar Contraseña:</label>
+</p>
+    <input type="password2" class="form-control" id="exampleInputPassword2" placeholder="Confirmar Contraseña">
+  </div>
+<div class = "form-group">
+<label for="label">*Todos los campos son obligatorios*</label>
+</div>
+
+  <button type="Confirmar" class="btn btn-default">Confirmar</button>
+</div>
+</form>
+
+
+
+
+
+</body>
+</html>
