@@ -1,0 +1,454 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>¡Agrega una propiedad!</title>
+   <!-- HEAD
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Custom fonts for this template -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/ css">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/grayscale.min.css" rel="stylesheet">-->
+    <nav class="navbar navbar-default">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.floating-checkbox {
+    display: inline-block; 
+}
+
+/* layout.css Style */
+.upload-drop-zone {
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px;
+}
+
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+
+
+
+</style>
+
+
+
+
+  </head>
+
+  <body>
+<br><br><br><br>
+<!--<form action="/properties" class="new_property" id="new_property" method="post"> -->
+<form accept-charset="UTF-8" action="/properties" class="new_property"
+      id="new_property" method="post">
+    <div id="main-container" class="container">
+      <div class="row">
+	<div class="col-xs-21">
+           <%= render 'shared/navigation' %>
+	</div>
+<!--        <div class="col-xs-21"> -->
+<!--        <div class="col-xs-offset-4 col-xs-11"> -->
+    <center>      <h3>Agrega una propiedad</h3> </center>
+<!--	</div> -->
+        <div class="col-xs-offset-3 col-xs-5">
+<form role="form">
+ <div class="form-group">
+    <div class="col-sm-10">
+<!--        <div class = "form-group"> -->
+	   <h4>
+		<label for="label">Datos generales</label>
+	   </h4>
+<!--	</div>-->
+    </div>
+</div>
+<br/><br>
+####################
+<style>
+/* Desde aquí es una prueba para la cosa de subir imágenes */
+.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    <
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+</style>
+<div class="container" style="width:170%"> <br />
+    <div class="row">
+
+    	<div class="col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong>Selecciona una imagen</strong> <small> </small></div>
+				<div class="panel-body">
+					<div class="input-group image-preview">
+						<input placeholder="" type="text" class="form-control image-preview-filename" disabled="disabled">
+						<!-- don't give a name === doesn't send on POST/GET --> 
+						<span class="input-group-btn"> 
+						<!-- image-preview-clear button -->
+						<button type="button" class="btn btn-default image-preview-clear" style="display:none;"> <span class="glyphicon glyphicon-remove"></span> Clear </button>
+						<!-- image-preview-input -->
+						<div class="btn btn-default image-preview-input"> <span class="glyphicon glyphicon-folder-open"></span> <span class="image-preview-input-title">Examinar</span>
+							<input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+							<!-- rename it --> 
+						</div>
+						<button type="button" class="btn btn-labeled btn-default"> <span class="btn-label"><i class="glyphicon glyphicon-upload"></i> </span>Subir</button>
+						</span> </div>
+					<!-- /input-group image-preview [TO HERE]--> 
+					
+					<br />
+					
+					<!-- Drop Zone -->
+					<div class="upload-drop-zone" id="drop-zone"> Or drag and drop files here </div>
+					<br />
+					<!-- Progress Bar -->
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span> </div>
+					</div>
+					<br />
+					<!-- Upload Finished -->
+					<div class="js-upload-finished">
+						<h5>Imágenes subidas</h5>
+						<div class="list-group"> <a href="#" class="list-group-item list-group-item-danger"><span class="badge alert-danger pull-right">23-11-2014</span>amended-catalogue-01.xls</a> <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a> <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue-01.xls</a> <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">23-11-2014</span>amended-catalogue.xls</a> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+       
+        
+        
+	</div>
+</div>
+
+<br>#################################
+<br>
+  <div class="form-group">
+    <label for="street">Calle:</label>
+    <input type="text" id="property_street" name="property[street]" class="form-control" placeholder="Calle"/>
+  </div>
+  <div class="form-group">
+    <label for="number">Número:</label>
+    <input type="text" id="property_number" name="property[number]" class="form-control" placeholder="Número interior y exterior" style="width:50%"/>
+  </div>
+  <div class="form-group">
+    <label for="city">Colonia:</label>
+    <input type="text" id="property_city" name="propery[city]" class="form-control" placeholder="Colonia"/>
+  </div>
+  <div class="form-group">
+   <label for="state">Delegación:</label>
+    <input type="text" id="property_state" name="property[state]" class="form-control" placeholder="Delegación"/>
+  </div>
+  <div class="form-group">
+<table style="border-spacing: 5px">
+	<tr>
+		<td>
+		    <label for="type">Tipo de propiedad:</label>
+<!--    <input type="radio" id="user_type" name="type" value="apartment" class="form-control"> Departamento<br>
+    <input type="radio" id="user_type" name="type" value="house" class="form-control"> Casa<br> -->
+	            <select name="type">
+		       <option value="apartment">Departamento</option>
+		       <option value="house">Casa</option>
+		    </select>
+		</td> 
+<!--  </div> -->
+<!--  <div class="form-group"> -->
+		<td>
+    			<label for="share">Compartir:</label>
+<!--    <input type="checkbox" id="property_share" name="user[phone]" class="form-control" /> -->
+			<label class="switch">
+	 			<input type="checkbox" id="property_share" name="property[share]" class="form-control" >
+	  			<div class="slider round"></div>
+			</label>
+		</td>
+<!--  </div> -->
+	</tr>
+<!--</table>
+
+
+    <table>-->
+	<tr>
+    	    <td>
+		<label for="rooms">Habitaciones:</label>
+		<div class="floating-checkbox">
+	    	    <input type="number" id="property_rooms" name="property[rooms]" style="width:30%"/>
+		</div>
+	    </td>
+	    <td>
+		<label for="price">Precio:</label>
+	        <div class="floating-checkbox">
+	            <input type="text" id="property_price" name="property[price]" style="width:70%" placeholder="MXN mensuales"/>
+	       </div>
+	    </td>
+	</tr>
+    </table>
+<br><br>
+ <div class="form-group">
+    <div class="col-sm-10">
+        <div class = "form-group">
+	   <h4>
+		<label for="label">Servicios incluidos</label>
+	   </h4>
+	</div>
+    </div>
+<!-- </div>
+  <div class="form-group"> -->
+    <table>
+	<tr>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_electricity" name="property[electricity]" />
+		</div>
+    		<label for="electricity">Luz </label>
+<!--    		<label class="checkbox-inline">
+	            <input type="checkbox" id="property_electricity" name="property[electricity]">Luz
+	        </label> -->
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_water" name="property[water]" />
+		</div>
+		<label for="water">Agua </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_gas" name="property[gas]" />
+		</div>
+		<label for="gas">Gas </label>
+	    </td>
+	</tr>
+	<tr>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_internet" name="property[internet]"/>
+		</div>
+    		<label for="internet">Internet </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_cable" name="property[cable]" />
+		</div>
+		<label for="cable">Cable </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_kitchen" name="property[kitchen]" />
+		</div>
+		<label for="kitchen">Cocina </label>
+	    </td>
+	</tr>
+    </table>
+<br><br>
+ <div class="form-group">
+    <div class="col-sm-10">
+        <div class = "form-group">
+	   <h4>
+		<label for="label">Servicios adicionales</label>
+	   </h4>
+	</div>
+    </div>
+<!-- </div> -->
+<!--  <div class="form-group"> -->
+    <table>
+	<tr>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_parking_space" name="property[parking_space]" />
+		</div>
+    		<label for="parking_space">Estacionamiento </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_furnished" name="property[furnished]" />
+		</div>
+		<label for="furnished">Amueblado </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_security" name="property[security]" />
+		</div>
+		<label for="security">Vigilancia </label>
+	    </td>
+	</tr>
+	<tr>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_balcony" name="property[balcony]" />
+		</div>
+    		<label for="balcony">Balcón </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_elevator" name="property[elevator]" />
+		</div>
+		<label for="elevator">Elevador </label>
+	    </td>
+	    <td>
+		<div class="floating-checkbox">
+		    <input type="checkbox" id="property_ramps" name="property[ramps]" />
+		</div>
+		<label for="ramps">Rampas para discapacitados </label>
+	    </td>
+	</tr>
+    </table>
+
+<!-- ### <div class="form-group"> -->
+
+<!--  </div> -->
+    <div class="form-group">
+<br><br>
+        <div class="col-sm-10">
+            <div class = "form-group">
+	       <h4>
+	  	    <label for="label">Reglas</label>
+	       </h4>
+	    </div>
+        </div>
+	<table>
+	    <tr>
+		<td>
+    	            <div class="floating-checkbox">
+		        <input type="checkbox" id="property_pets" name="property[pets]" class="form-control" />
+	            </div> 
+ 	            <label for="pets">Mascotas</label>
+		</td>
+		<td>
+		    <div class="floating-checkbox">
+		        <input type="checkbox" id="property_parties" name="property[parties]" class="form-control" />
+		    </div>
+		    <label for="parties">Reuniones </label>
+		</td>
+	    </tr>
+	</table>
+  </div>
+<!--  <div class="form-group"> -->
+<!--  <div class="form-group"> -->
+<br>
+    <label for="comment">Información adicional:</label>
+    <textarea class="form-control" rows="5" id="comment" placeholder="Agrega algún comentario o información extra."></textarea>
+  </div>
+ <div class="form-group"> 
+<!--    <div class="col-sm-offset-2 col-sm-10"> -->
+    <center>
+        <div class = "form-group">
+	    <label for="label">*Todos los campos son obligatorios*</label>
+        </div>
+<!--        </div>-->
+<!--    <div class="col-sm-offset-4 col-sm-10"> -->
+  	<input type="submit" value="Agregar" />
+<!--   </div> -->
+    </center>
+ </div>
+
+
+<!-- Creo que puedo dejar esto fuera D:
+<%= link_to "inicioSesion", class: 'btn btn-success' do %>
+             <i class="glyphicon glyphicon-plus"></i> New Todo
+          <% end %>
+
+          <%= yield %>
+-->
+
+
+	  
+<!--        </div>
+      </div>-->
+<!--    </div>-->
+</form>
+
+<center>
+    <nav class="navbar navbar-footer">
+</center>
+<!--<br><br><br>-->
+  </body>
+</html>
+

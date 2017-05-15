@@ -1,0 +1,96 @@
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>¡Regístrate!</title>
+   <!-- HEAD
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Custom fonts for this template -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/ css">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/grayscale.min.css" rel="stylesheet">-->
+    <nav class="navbar navbar-default">
+  </head>
+
+  <body>
+<br><br><br><br>
+<!--<form action="/users" class="new_user" id="new_user" method="post"> -->
+<form accept-charset="UTF-8" action="/users" class="new_user"
+      id="new_user" method="post">
+    <div id="main-container" class="container">
+      <div class="row">
+	<div class="col-xs-21">
+           <%= render 'shared/navigation' %>
+	</div>
+<!--        <div class="col-xs-21"> -->
+        <div class="col-xs-offset-5 col-xs-11">
+          <h3>¡Regístrate!</h3>
+	</div>
+        <div class="col-xs-offset-3 col-xs-5">
+<form role="form">
+  <div class="form-group">
+    <label for="user_name">Nombre:</label>
+    <input type="text" id="user_name" name="user[name]" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="user_last_name">Apellidos:</label>
+    <input type="text" id="user_last_name" name="user[last_name]" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="user_email">E-mail:</label>
+    <input type="email" id="user_email" name="user[email]" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="user_phone">Teléfono:</label>
+    <input type="tel" id="user_phone" name="user[phone]" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="user_password">Contraseña:</label>
+    <input type="password" id="user_password" name="user[password]" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="password2">Confirmar contraseña:</label>
+    <input type="password" id="password2" name="password2" class="form-control" />
+  </div>
+ <div class="form-group">
+    <center>
+	<label>*Todos los campos son obligatorios*</label>
+	<br>
+       <input type="submit" value="Confirmar" />
+<!--	<input type="button" value="Cancelar" /> -->
+    </center>
+ </div>
+
+
+<!-- Creo que puedo dejar esto fuera D:
+<%= link_to "inicioSesion", class: 'btn btn-success' do %>
+             <i class="glyphicon glyphicon-plus"></i> New Todo
+          <% end %>
+
+          <%= yield %>
+-->
+</form>
+
+	  
+        </div>
+      </div>
+    </div>
+</form>
+<!--</form>-->
+<center>
+    <nav class="navbar navbar-footer">
+</center>
+  </body>
+</html>
+
