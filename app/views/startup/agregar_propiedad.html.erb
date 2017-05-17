@@ -162,6 +162,18 @@ input:checked + .slider:before {
 .image-preview-input-title {
     margin-left:2px;
 }
+
+table { 
+    width: 110%;
+/*    border-spacing: 10px; */
+    border-collapse: separate;
+}
+td { 
+    padding: 5px;
+}
+table td.shrink {
+    white-space:nowrap
+}
 </style>
 <div class="container" style="width:170%"> <br />
     <div class="row">
@@ -229,7 +241,7 @@ input:checked + .slider:before {
     <input type="text" id="property_state" name="property[state]" class="form-control" placeholder="Delegación"/>
   </div>
   <div class="form-group">
-<table style="border-spacing: 5px">
+<table>
 	<tr>
 		<td>
 		    <label for="type">Tipo de propiedad:</label>
@@ -259,15 +271,15 @@ input:checked + .slider:before {
 	<tr>
     	    <td>
 		<label for="rooms">Habitaciones:</label>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 	    	    <input type="number" id="property_rooms" name="property[rooms]" style="width:30%"/>
-		</div>
+<!--		</div>-->
 	    </td>
 	    <td>
 		<label for="price">Precio:</label>
-	        <div class="floating-checkbox">
-	            <input type="text" id="property_price" name="property[price]" style="width:70%" placeholder="MXN mensuales"/>
-	       </div>
+<!--	        <div class="floating-checkbox">-->
+	            <input type="text" id="property_price" name="property[price]" style="width:55%" placeholder="MXN mensuales"/>
+<!--	       </div>-->
 	    </td>
 	</tr>
     </table>
@@ -282,7 +294,7 @@ input:checked + .slider:before {
     </div>
 <!-- </div>
   <div class="form-group"> -->
-    <table>
+    <table cellpadding="20">
 	<tr>
 	    <td>
 		<div class="floating-checkbox">
@@ -341,41 +353,41 @@ input:checked + .slider:before {
     <table>
 	<tr>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_parking_space" name="property[parking_space]" />
-		</div>
+<!--		</div>-->
     		<label for="parking_space">Estacionamiento </label>
 	    </td>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_furnished" name="property[furnished]" />
-		</div>
+<!--		</div>-->
 		<label for="furnished">Amueblado </label>
 	    </td>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_security" name="property[security]" />
-		</div>
+<!--		</div>-->
 		<label for="security">Vigilancia </label>
 	    </td>
 	</tr>
 	<tr>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_balcony" name="property[balcony]" />
-		</div>
+<!--		</div>-->
     		<label for="balcony">Balcón </label>
 	    </td>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_elevator" name="property[elevator]" />
-		</div>
+<!--		</div>-->
 		<label for="elevator">Elevador </label>
 	    </td>
 	    <td>
-		<div class="floating-checkbox">
+<!--		<div class="floating-checkbox">-->
 		    <input type="checkbox" id="property_ramps" name="property[ramps]" />
-		</div>
+<!--		</div>-->
 		<label for="ramps">Rampas para discapacitados </label>
 	    </td>
 	</tr>
@@ -396,15 +408,15 @@ input:checked + .slider:before {
 	<table>
 	    <tr>
 		<td>
-    	            <div class="floating-checkbox">
-		        <input type="checkbox" id="property_pets" name="property[pets]" class="form-control" />
-	            </div> 
+<!--    	            <div class="floating-checkbox">-->
+		        <input type="checkbox" id="property_pets" name="property[pets]"  />
+<!--	            </div> -->
  	            <label for="pets">Mascotas</label>
 		</td>
 		<td>
-		    <div class="floating-checkbox">
-		        <input type="checkbox" id="property_parties" name="property[parties]" class="form-control" />
-		    </div>
+<!--		    <div class="floating-checkbox">-->
+		        <input type="checkbox" id="property_parties" name="property[parties]"  />
+<!--		    </div>-->
 		    <label for="parties">Reuniones </label>
 		</td>
 	    </tr>

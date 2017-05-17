@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502034554) do
+ActiveRecord::Schema.define(version: 20170517215828) do
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "street"
+    t.string   "number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "type"
+    t.boolean  "share"
+    t.integer  "rooms"
+    t.integer  "price"
+    t.boolean  "electricity"
+    t.boolean  "water"
+    t.boolean  "gas"
+    t.boolean  "internet"
+    t.boolean  "cable"
+    t.boolean  "kitchen"
+    t.boolean  "parking_space"
+    t.boolean  "furnished"
+    t.boolean  "security"
+    t.boolean  "balcony"
+    t.boolean  "ramps"
+    t.boolean  "pets"
+    t.boolean  "parties"
+    t.text     "comment"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

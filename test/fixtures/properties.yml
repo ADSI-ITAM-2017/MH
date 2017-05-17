@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  street: MyString
+  number: MyString
+  city: MyString
+  state: MyString
+  type: 
+  share: false
+  rooms: 1
+  price: 1
+  electricity: false
+  water: false
+  gas: false
+  internet: false
+  cable: false
+  kitchen: false
+  parking_space: false
+  furnished: false
+  security: false
+  balcony: false
+  ramps: false
+  pets: false
+  parties: false
+  comment: MyText
+
+two:
+  street: MyString
+  number: MyString
+  city: MyString
+  state: MyString
+  type: 
+  share: false
+  rooms: 1
+  price: 1
+  electricity: false
+  water: false
+  gas: false
+  internet: false
+  cable: false
+  kitchen: false
+  parking_space: false
+  furnished: false
+  security: false
+  balcony: false
+  ramps: false
+  pets: false
+  parties: false
+  comment: MyText

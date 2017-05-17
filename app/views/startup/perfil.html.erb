@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>¡Regístrate!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/ css">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+        <!-- Custom styles for this template -->
+        <!--<link href="css/grayscale.min.css" rel="stylesheet">-->
+        <nav class="navbar navbar-default">
+    </head>
+
+    <body>
+	<br><br><br><br>
+	<form accept-charset="UTF-8" action="/users" class="new_user"
+      id="new_user" method="post">
+            <div id="main-container" class="container">
+		<%= render 'shared/navigation' %>
+		<center>
+		    <div class="panel panel-default">
+			<div class="panel-heading">
+			    <strong>Mi perfil</strong><small></small>
+			</div>
+			<div class="panel-body">
+			    <p id="notice"><%= notice %></p>
+			    <p>
+			        <strong>Name:</strong>
+			        <%= @user.name %>
+			    </p>
+
+			    <p>
+			        <strong>Last name:</strong>
+			        <%= @user.last_name %>
+			    </p>
+
+			    <p>
+			        <strong>Email:</strong>
+			        <%= @user.email %>
+			    </p>
+
+			    <p>
+			        <strong>Phone:</strong>
+			        <%= @user.phone %>
+			    </p>
+
+			    <p>
+			        <strong>Password:</strong>
+			        <%= @user.password %>
+			    </p>
+
+			        <%= link_to 'Edit', edit_user_path(@user) %> |
+			        <%= link_to 'Back', users_path %>
+			</div>
+		    </div>
+		</center>
+	    </div>
+	</form>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street</th>
+      <th>Number</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Type</th>
+      <th>Share</th>
+      <th>Rooms</th>
+      <th>Price</th>
+      <th>Electricity</th>
+      <th>Water</th>
+      <th>Gas</th>
+      <th>Internet</th>
+      <th>Cable</th>
+      <th>Kitchen</th>
+      <th>Parking space</th>
+      <th>Furnished</th>
+      <th>Security</th>
+      <th>Balcony</th>
+      <th>Ramps</th>
+      <th>Pets</th>
+      <th>Parties</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.street %></td>
+        <td><%= property.number %></td>
+        <td><%= property.city %></td>
+        <td><%= property.state %></td>
+        <td><%= property.type %></td>
+        <td><%= property.share %></td>
+        <td><%= property.rooms %></td>
+        <td><%= property.price %></td>
+        <td><%= property.electricity %></td>
+        <td><%= property.water %></td>
+        <td><%= property.gas %></td>
+        <td><%= property.internet %></td>
+        <td><%= property.cable %></td>
+        <td><%= property.kitchen %></td>
+        <td><%= property.parking_space %></td>
+        <td><%= property.furnished %></td>
+        <td><%= property.security %></td>
+        <td><%= property.balcony %></td>
+        <td><%= property.ramps %></td>
+        <td><%= property.pets %></td>
+        <td><%= property.parties %></td>
+        <td><%= property.comment %></td>
+        <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property', new_property_path %>
