@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'startup/inicioSesion'
   get 'startup/agregar_propiedad'
   get 'startup/perfil'
+  get 'startup/pruebaImg'
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'
   get    '/contact', to: 'static_pages#contact'
