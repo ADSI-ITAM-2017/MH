@@ -1,4 +1,7 @@
 class StartupController < ApplicationController
-	def inicioSesion
-	end
+  def busqueda
+  end
+
+  def new
+  end
 end

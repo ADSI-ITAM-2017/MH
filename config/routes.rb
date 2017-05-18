@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'startup/busqueda'
+
+  get 'startup/busqueda'
+
+  get 'startup/new'
+
+  get 'startup/busqueda'
+
   resources :properties
   resources :users
 #
