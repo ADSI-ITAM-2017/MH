@@ -5,5 +5,5 @@ end
  
 User.create(name: "John Doe").valid? # => true
 User.create(name: nil).valid? # => false
-mount_uploader :image, ImageUploader
+#mount_uploader :image, ImageUploader
 #end
